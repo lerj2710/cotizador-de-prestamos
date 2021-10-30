@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{Fragment ,useState} from 'react';
 const Formulario = ({ cantidad, guardarCantidad, plazo, guardarPlazo}) => {
 
     //definir el error
@@ -7,11 +7,15 @@ const [error, guardarError] = useState(false);
         e.preventDefault();
         //mostrar el error
         if(cantidad=== 0 || plazo === ''){
-            guardarError('hay un error....');
+            guardarError(true);
+            return;
         }
+        //eliminar el error previo
+        guardarError(false);
         //mostrar cotizacion
     };
     return ( 
+        <Fragment>
         <form onSubmit={calcularPrestamo}>
          
             <div className="row">
@@ -46,6 +50,9 @@ const [error, guardarError] = useState(false);
                 </div>
             </div>
         </form>
+        {(error) ? <p className="error">Todos los campos son obligatorio</p> : null}
+       
+        </Fragment>
      );
 }
  
