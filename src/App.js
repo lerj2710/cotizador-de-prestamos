@@ -5,6 +5,7 @@ import Formulario from './componentes/formulario';
 function App() {
   //usar useState
  const [cantidad, guardarCantidad] = useState(0);
+ const [plazo, guardarPlazo] = useState('');
   return (
     <Fragment>
       <Header
@@ -14,6 +15,8 @@ function App() {
         <Formulario
         cantidad={cantidad}
         guardarCantidad={guardarCantidad}
+        plazo={plazo}
+        guardarPlazo={guardarPlazo}
         />
       </div>
     </Fragment>
