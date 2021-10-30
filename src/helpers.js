@@ -18,7 +18,7 @@ export function calcularCantidad(cantidad, plazo) {
     }else{
       totalCantidad = cantidad *.10;
     }
-    console.log(totalCantidad);
+    // console.log(totalCantidad);
     let totalPlazo = 0;
     switch (plazo) {
         case 3:
@@ -40,6 +40,6 @@ export function calcularCantidad(cantidad, plazo) {
         default:
             break;
     }
-    console.log(totalPlazo);
+    // console.log(totalPlazo);
     return totalPlazo+ totalCantidad + cantidad;
 }
